@@ -952,13 +952,6 @@ const submitBtnElement = document.querySelector(".submit-btn");
 const filterBtnsElement = document.querySelectorAll(".btn");
 const outputMoviesElement = document.querySelector(".section-movies");
 
-console.log(outputMoviesElement);
-
-console.log(searchTermElement);
-console.log(submitBtnElement);
-console.log(filterBtnsElement);
-console.log(outputMoviesElement);
-
 const showMovies = () => {
   movies.forEach((elt) => {
     outputMoviesElement.innerHTML += `<div class="movie-wrapper">
