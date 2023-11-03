@@ -79,6 +79,7 @@ body {
   line-height: 1;
   font-weight: 400;
   text-align: center;
+  background-color: #212529;
 }
 
 /* ------------------------ */
@@ -94,10 +95,11 @@ body {
 .header {
   padding-top: 6rem;
   margin-bottom: 4rem;
+  color: white;
 }
 .heading-primary {
   font-size: 3.6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .heading-sub {
   font-size: 2rem;
@@ -113,19 +115,21 @@ body {
   padding-block: 1rem;
   padding-left: 1rem;
   border-radius: 5rem;
-  border: 2px solid blue;
+  border: 2px solid #fa5252;
   font-size: 1.8rem;
   text-align: center;
+  margin-right: 1rem;
 }
 
 .submit-btn {
   padding-block: 1rem;
   padding-inline: 4rem;
   border-radius: 5rem;
-  background-color: blue;
+  background-color: #fa5252;
   color: white;
   font-size: 1.6rem;
   text-transform: uppercase;
+  border: none;
 }
 
 .filter-wrapper {
@@ -137,10 +141,12 @@ body {
   padding-block: 1rem;
   padding-inline: 3rem;
   border-radius: 5rem;
-  border: 2px solid blue;
+  border: 2px solid #fa5252;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  background-color: transparent;
+  color: white;
 }
 .section-movies {
   display: grid;
@@ -150,9 +156,10 @@ body {
 }
 .movie-wrapper {
   font-size: 1.8rem;
-  background-color: blue;
+  background-color: #e03131;
   padding: 6rem 4rem;
   border-radius: 2rem;
+  color: white;
 }
 .movie-headline {
   font-size: 3rem;
