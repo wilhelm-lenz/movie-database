@@ -106,40 +106,49 @@ body {
 }
 
 .section-search {
-  max-width: 50rem;
+  max-width: 70rem;
   margin: 0 auto;
 }
 
 .searchField {
   width: 60%;
-  padding-block: 1rem;
-  padding-left: 1rem;
+  padding-block: 2rem;
+  padding-right: 1rem;
   border-radius: 5rem;
   border: 2px solid #fa5252;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-align: center;
   margin-right: 1rem;
+  color: #e03131;
 }
 
 .submit-btn {
-  padding-block: 1rem;
-  padding-inline: 4rem;
+  padding-block: 2rem;
+  padding-inline: 6rem;
   border-radius: 5rem;
   background-color: #fa5252;
   color: white;
   font-size: 1.6rem;
   text-transform: uppercase;
-  border: none;
+  border: 2px solid #fa5252;
+}
+
+.submit-btn:hover {
+  background-color: rgb(250, 82, 82, 0.8);
+  transition: 0.2s linear;
 }
 
 .filter-wrapper {
-  margin-block: 5rem;
-  max-width: 50rem;
+  max-width: 70rem;
+  margin: 3rem auto 8rem;
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
 }
 
 .btn {
-  padding-block: 1rem;
-  padding-inline: 3rem;
+  padding-block: 1.6rem;
+  padding-inline: 5rem;
   border-radius: 5rem;
   border: 2px solid #fa5252;
   font-size: 1.4rem;
@@ -148,35 +157,62 @@ body {
   background-color: transparent;
   color: white;
 }
+
+.btn:hover {
+  background-color: rgb(250, 82, 82, 0.4);
+  transition: 0.2s linear;
+}
+
 .section-movies {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 8rem 6rem;
-  padding-inline: 2%;
+  gap: 8rem 4rem;
+  padding-inline: 5%;
+  padding-bottom: 4rem;
 }
+
 .movie-wrapper {
   font-size: 1.8rem;
   background-color: #e03131;
   padding: 6rem 4rem;
   border-radius: 2rem;
   color: white;
+  animation: movinBottom 0.5s linear;
+  t
 }
+
 .movie-headline {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
+
 .year {
   margin-bottom: 2rem;
 }
+
 .actor {
   font-weight: bold;
   margin-bottom: 2rem;
 }
+
 .duration {
   margin-bottom: 2rem;
 }
+
 .genre {
   margin-bottom: 2rem;
 }
+
 .rate {
+}
+
+@keyframes movinBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
