@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movie-database</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="heading-primary">Movies for You</h1>
+      <p class="heading-sub">The best MovieDB</p>
+    </header>
+    <main>
+      <section class="section-search">
+        <form>
+          <input type="search" name="search" id="search-input" class="searchField">
+          <input type="submit" value="search" class="submit-btn">
+        </form>
+        <div class="filter-wrapper">
+          <button class="btn filter-year-asc" onclick="ascMoviesByYear()">year up</button>
+          <button class="btn filter-year-desc" onclick="descMoviesByYear()">year down</button>
+          <button class="btn filter-best-rate-desc" onclick="descBestRatingMovies()">best rate</button>
+        </div>
+      </section>
+      <section class="section-movies">
+
+      </section>
+    </main>
+  </div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
