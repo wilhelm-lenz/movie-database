@@ -10,11 +10,12 @@
 
 <body>
   <div class="container">
-    <header class="header">
+    <header id="top" class="header">
       <h1 class="heading-primary">Movies for You</h1>
       <p class="heading-sub">The best MovieDB</p>
     </header>
     <main>
+      <a href="#top" class="to-top"><img src="./assets/img/icons/arrow-up-30.png" alt=""></a>
       <section class="section-search">
         <form>
           <input type="search" name="search" id="search-input" class="searchField">
@@ -26,9 +27,8 @@
           <button class="btn filter-best-rate-desc" onclick="descBestRatingMovies()">best rate</button>
         </div>
       </section>
-      <section class="section-movies">
+      <section class="section-movies"></section>
 
-      </section>
     </main>
   </div>
 

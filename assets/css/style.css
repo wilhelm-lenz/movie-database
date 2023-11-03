@@ -37,8 +37,16 @@ Default: 1
 /* FONTS */
 /* =================================== */
 @font-face {
-  font-family: "";
-  src: url();
+  font-family: "Rubik-Bold";
+  src: url("../fonts/Rubik-Bold.ttf");
+}
+@font-face {
+  font-family: "Rubik-Medium";
+  src: url("../fonts/Rubik-Medium.ttf");
+}
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url("../fonts/Rubik-Regular.ttf");
 }
 /* =================================== */
 /* RESET STYLES */
@@ -64,6 +72,7 @@ html {
   /* 10px / 16px * 100% = 62,5% */
   /* Percentage of users browser font-size setting */
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -72,6 +81,7 @@ body {
   font-weight: 400;
   text-align: center;
   background-color: #212529;
+  font-family: "Rubik-Regular";
 }
 
 /* ------------------------ */
@@ -89,10 +99,32 @@ body {
 .heading-primary {
   font-size: 3.6rem;
   margin-bottom: 4rem;
+  font-family: "Rubik-Bold";
 }
 
 .heading-sub {
   font-size: 2rem;
+}
+
+main {
+  position: relative;
+}
+
+.to-top {
+  position: fixed;
+  right: 2.4rem;
+  bottom: 2.4rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.8rem;
+}
+
+.to-top img {
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.to-top:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .section-search {
@@ -127,13 +159,14 @@ body {
   background-color: rgba(250, 82, 82, 0.8);
   transition: 0.2s linear;
   transform: translateY(-0.2rem);
-  box-shadow: 4px 4px 5px #fa5252;
+  box-shadow: 4px 4px 5px rgba(255, 255, 255, 0.8);
+  cursor: pointer;
 }
 
 .submit-btn:active {
   transform: translateY(0.1rem);
-  box-shadow: 2px 2px 2px #fa5252;
-  background-color: rgba(250, 82, 82, 0.7);
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.8);
+  background-color: rgba(250, 82, 82, 0.2);
 }
 
 .filter-wrapper {
@@ -161,6 +194,7 @@ body {
   background-color: rgba(250, 82, 82, 0.4);
   transform: translateY(-0.2rem);
   box-shadow: 4px 4px 5px #fa5252;
+  cursor: pointer;
 }
 
 .btn:active {
@@ -171,16 +205,16 @@ body {
 
 .section-movies {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 8rem 4rem;
-  padding-inline: 5%;
+  padding-inline: 6%;
   padding-bottom: 4rem;
 }
 
 .movie-wrapper {
   font-size: 1.8rem;
   background-color: rgb(224, 49, 49);
-  padding: 6rem 4rem;
+  padding: 4rem 4rem;
   border-radius: 2rem;
   color: white;
   animation: movinBottom 0.5s linear;
@@ -189,11 +223,14 @@ body {
 .movie-wrapper:hover {
   transform: scale(1.05);
   background-color: rgba(224, 49, 49, 0.5);
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 
 .movie-headline {
   font-size: 3rem;
   margin-bottom: 2rem;
+  font-family: "Rubik-Bold";
 }
 
 .year {
@@ -201,8 +238,8 @@ body {
 }
 
 .actor {
-  font-weight: bold;
   margin-bottom: 2rem;
+  font-family: "Rubik-Bold";
 }
 
 .duration {
@@ -210,7 +247,18 @@ body {
 }
 
 .genre {
-  margin-bottom: 2rem;
+  margin-block: 4rem;
+  padding-inline: 4rem;
+}
+
+.rate {
+  font-size: 2.4rem;
+}
+
+.icon-star {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline;
 }
 
 @keyframes movinBottom {

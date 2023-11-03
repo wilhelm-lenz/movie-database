@@ -958,8 +958,12 @@ const showMovies = () => {
   <p class="year">${elt[1]}</p>
   <p class="actor">${elt[2]}</p>
   <p class="duration">${elt[3]}</p>
-  <p class="genre">${elt[4]}</p>
-  <p class="rate">${elt[5]}</p>
+  <div class="genre">${elt[4]
+    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
+    .join("")}</div>
+  <p class="rate"><img class="icon-star" src="./assets/img/icons/star50x50.png" alt="icon-star"> ${
+    elt[5]
+  }</p>
 </div>`;
   });
 };
@@ -975,7 +979,9 @@ const serachMovie = () => {
       <p class="year">${elt[1]}</p>
       <p class="actor">${elt[2]}</p>
       <p class="duration">${elt[3]}</p>
-      <p class="genre">${elt[4]}</p>
+      <div class="genre">${elt[4]
+        .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
+        .join("")}</div>
       <p class="rate">${elt[5]}</p>
     </div>`;
     } else if (elt[0].includes(searchTerm)) {
@@ -984,7 +990,9 @@ const serachMovie = () => {
     <p class="year">${elt[1]}</p>
     <p class="actor">${elt[2]}</p>
     <p class="duration">${elt[3]}</p>
-    <p class="genre">${elt[4]}</p>
+    <div class="genre">${elt[4]
+      .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
+      .join("")}</div>
     <p class="rate">${elt[5]}</p>
   </div>`;
     }
@@ -1002,7 +1010,9 @@ const ascMoviesByYear = () => {
   <p class="year">${elt[1]}</p>
   <p class="actor">${elt[2]}</p>
   <p class="duration">${elt[3]}</p>
-  <p class="genre">${elt[4]}</p>
+  <div class="genre">${elt[4]
+    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
+    .join("")}</div>
   <p class="rate">${elt[5]}</p>
 </div>`;
     });
@@ -1019,7 +1029,9 @@ const descMoviesByYear = () => {
   <p class="year">${elt[1]}</p>
   <p class="actor">${elt[2]}</p>
   <p class="duration">${elt[3]}</p>
-  <p class="genre">${elt[4]}</p>
+  <div class="genre">${elt[4]
+    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
+    .join("")}</div>
   <p class="rate">${elt[5]}</p>
 </div>`;
     });
@@ -1036,7 +1048,9 @@ const descBestRatingMovies = () => {
   <p class="year">${elt[1]}</p>
   <p class="actor">${elt[2]}</p>
   <p class="duration">${elt[3]}</p>
-  <p class="genre">${elt[4]}</p>
+  <div class="genre">${elt[4]
+    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
+    .join("")}</div>
   <p class="rate">${elt[5]}</p>
 </div>`;
     });
