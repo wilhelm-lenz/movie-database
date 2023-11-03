@@ -136,6 +136,14 @@ body {
 .submit-btn:hover {
   background-color: rgb(250, 82, 82, 0.8);
   transition: 0.2s linear;
+  transform: translateY(-0.2rem);
+  box-shadow: 4px 4px 5px #fa5252;
+}
+
+.submit-btn:active {
+  transform: translateY(0.1rem);
+  box-shadow: 2px 2px 2px #fa5252;
+  background-color: rgb(250, 82, 82, 0.7);
 }
 
 .filter-wrapper {
@@ -156,11 +164,19 @@ body {
   text-transform: uppercase;
   background-color: transparent;
   color: white;
+  transition: 0.2s ease-out;
 }
 
 .btn:hover {
   background-color: rgb(250, 82, 82, 0.4);
-  transition: 0.2s linear;
+  transform: translateY(-0.2rem);
+  box-shadow: 4px 4px 5px #fa5252;
+}
+
+.btn:active {
+  transform: translateY(0.1rem);
+  box-shadow: 2px 2px 2px #fa5252;
+  background-color: rgb(250, 82, 82, 0.7);
 }
 
 .section-movies {
@@ -173,12 +189,16 @@ body {
 
 .movie-wrapper {
   font-size: 1.8rem;
-  background-color: #e03131;
+  background-color: rgb(224, 49, 49);
   padding: 6rem 4rem;
   border-radius: 2rem;
   color: white;
   animation: movinBottom 0.5s linear;
-  t
+}
+
+.movie-wrapper:hover {
+  transform: scale(1.05);
+  background-color: rgb(224, 49, 49, 0.5);
 }
 
 .movie-headline {

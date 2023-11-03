@@ -1,18 +1,227 @@
-/* Error: expected "{".
- *     ,
- * 181 |   t
- *     |    ^
- *     '
- *   assets/scss/base/_base.scss 181:4  @use
- *   assets/scss/main.scss 5:1          root stylesheet */
+@charset "UTF-8";
+/* =================================== */
+/* DESIGN SYSTEM */
+/* =================================== */
+/*
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a     \2577 \a 181 \2502    t\a     \2502     ^\a     \2575 \a   assets/scss/base/_base.scss 181:4  @use\a   assets/scss/main.scss 5:1          root stylesheet';
+! --- 01 TYPOGRAPHY SYSTEM
+
+* Font size system(px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+* Font weights
+Default: 400
+
+* Line heights
+Default: 1
+
+! --- 02 COLORS
+
+- Primary: Primäre Farbe 
+- Tints (Farbtöne):
+- Shades (Schattierungen):
+- Accents:
+- Greys: #555 Beliebte Grau Töne
+
+! --- 05 SHADOWS
+
+! --- 06 BORDER-RADIUS
+
+! --- 07 WHITESPACE
+
+* Spacing System (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+/* =================================== */
+/* FONTS */
+/* =================================== */
+@font-face {
+  font-family: "";
+  src: url();
 }
+/* =================================== */
+/* RESET STYLES */
+/* =================================== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------ */
+/* HELPER CLASSES */
+/* ------------------------ */
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+/* ------------------------ */
+/* GENERAL STYLES */
+/* ------------------------ */
+html {
+  /* 10px / 16px * 100% = 62,5% */
+  /* Percentage of users browser font-size setting */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+  background-color: #212529;
+}
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+/* ------ HEADER ------ */
+/* ------ MAIN ------ */
+/* ------ FOOTER ------ */
+.header {
+  padding-top: 6rem;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+.heading-primary {
+  font-size: 3.6rem;
+  margin-bottom: 4rem;
+}
+
+.heading-sub {
+  font-size: 2rem;
+}
+
+.section-search {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.searchField {
+  width: 60%;
+  padding-block: 2rem;
+  padding-right: 1rem;
+  border-radius: 5rem;
+  border: 2px solid #fa5252;
+  font-size: 2rem;
+  text-align: center;
+  margin-right: 1rem;
+  color: #e03131;
+}
+
+.submit-btn {
+  padding-block: 2rem;
+  padding-inline: 6rem;
+  border-radius: 5rem;
+  background-color: #fa5252;
+  color: white;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  border: 2px solid #fa5252;
+}
+
+.submit-btn:hover {
+  background-color: rgba(250, 82, 82, 0.8);
+  transition: 0.2s linear;
+  transform: translateY(-0.2rem);
+  box-shadow: 4px 4px 5px #fa5252;
+}
+
+.submit-btn:active {
+  transform: translateY(0.1rem);
+  box-shadow: 2px 2px 2px #fa5252;
+  background-color: rgba(250, 82, 82, 0.7);
+}
+
+.filter-wrapper {
+  max-width: 70rem;
+  margin: 3rem auto 8rem;
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.btn {
+  padding-block: 1.6rem;
+  padding-inline: 5rem;
+  border-radius: 5rem;
+  border: 2px solid #fa5252;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: white;
+  transition: 0.2s ease-out;
+}
+
+.btn:hover {
+  background-color: rgba(250, 82, 82, 0.4);
+  transform: translateY(-0.2rem);
+  box-shadow: 4px 4px 5px #fa5252;
+}
+
+.btn:active {
+  transform: translateY(0.1rem);
+  box-shadow: 2px 2px 2px #fa5252;
+  background-color: rgba(250, 82, 82, 0.7);
+}
+
+.section-movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 8rem 4rem;
+  padding-inline: 5%;
+  padding-bottom: 4rem;
+}
+
+.movie-wrapper {
+  font-size: 1.8rem;
+  background-color: rgb(224, 49, 49);
+  padding: 6rem 4rem;
+  border-radius: 2rem;
+  color: white;
+  animation: movinBottom 0.5s linear;
+}
+
+.movie-wrapper:hover {
+  transform: scale(1.05);
+  background-color: rgba(224, 49, 49, 0.5);
+}
+
+.movie-headline {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.year {
+  margin-bottom: 2rem;
+}
+
+.actor {
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.duration {
+  margin-bottom: 2rem;
+}
+
+.genre {
+  margin-bottom: 2rem;
+}
+
+@keyframes movinBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
