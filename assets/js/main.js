@@ -949,7 +949,6 @@ const movies = [
 
 const searchTermElement = document.querySelector("#search-input");
 const submitBtnElement = document.querySelector(".submit-btn");
-const filterBtnsElement = document.querySelectorAll(".btn");
 const outputMoviesElement = document.querySelector(".section-movies");
 
 const showMovies = () => {
