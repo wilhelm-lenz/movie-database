@@ -190,8 +190,9 @@ main {
 }
 
 .btn {
+  width: 100%;
   padding-block: 1.6rem;
-  padding-inline: 5rem;
+  padding-inline: 2rem;
   border-radius: 5rem;
   border: 2px solid #fa5252;
   font-size: 1.4rem;
@@ -200,6 +201,7 @@ main {
   background-color: transparent;
   color: white;
   transition: 0.2s ease-out;
+  text-align: center;
 }
 
 .btn:hover {
@@ -213,6 +215,39 @@ main {
   transform: translateY(0.1rem);
   box-shadow: 2px 2px 2px #fa5252;
   background-color: rgb(250, 82, 82, 0.7);
+}
+
+.select-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-by-genre {
+  appearance: none;
+  position: relative;
+  max-width: 100%;
+  padding-inline: 2rem;
+  width: 18rem;
+}
+
+.arrow-down-wrapper {
+  transform: rotate(180deg);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.arrow-down {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .section-movies {

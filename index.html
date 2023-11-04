@@ -25,6 +25,34 @@
           <button class="btn filter-year-asc" onclick="ascMoviesByYear()">year up</button>
           <button class="btn filter-year-desc" onclick="descMoviesByYear()">year down</button>
           <button class="btn filter-best-rate-desc" onclick="descBestRatingMovies()">best rate</button>
+          <div class="select-container">
+            <select class="btn filter-by-genre" onchange="filterByGenre()">
+              <option value="">Genre</option>
+              <option value="Crime">Crime</option>
+              <option value="Drama">Drama</option>
+              <option value="Action">Action</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Biography">Biography</option>
+              <option value="History">History</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Western">Western</option>
+              <option value="Romance">Romance</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Comedy">Comedy</option>
+              <option value="War">War</option>
+              <option value="Animation">Animation</option>
+              <option value="Family">Family</option>
+              <option value="Horror">Horror</option>
+              <option value="Music">Music</option>
+              <option value="Film-Noir">Film-Noir</option>
+              <option value="Sport">Sport</option>
+            </select>
+            <div class="arrow-down-wrapper">
+              <img class="arrow-down" src="./assets/img/icons/arrow-up-30.png" alt="icon arrow down">
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-movies"></section>
