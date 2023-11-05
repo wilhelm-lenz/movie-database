@@ -21,7 +21,8 @@
           <input type="search" name="search" id="search-input" class="searchField">
           <input type="submit" value="search" class="submit-btn">
         </form>
-        <div class="filter-wrapper">
+        <h2 class="filter-headline">Filter Movies</h2>
+        <article class="filter-wrapper">
           <button class="btn filter-year-asc" onclick="ascMoviesByYear()">year up</button>
           <button class="btn filter-year-desc" onclick="descMoviesByYear()">year down</button>
           <button class="btn filter-best-rate-desc" onclick="descBestRatingMovies()">best rate</button>
@@ -53,7 +54,8 @@
               <img class="arrow-down" src="./assets/img/icons/arrow-up-30.png" alt="icon arrow down">
             </div>
           </div>
-        </div>
+          <button class="btn add-movie-btn">+ new Movie</button>
+        </article>
       </section>
       <section class="section-movies"></section>
 
