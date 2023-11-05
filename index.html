@@ -17,7 +17,7 @@
     <main>
       <a href="#top" class="to-top"><img src="./assets/img/icons/arrow-up-30.png" alt=""></a>
       <section class="section-search">
-        <form>
+        <form method="get">
           <input type="search" name="search" id="search-input" class="searchField">
           <input type="submit" value="search" class="submit-btn">
         </form>
@@ -27,7 +27,7 @@
           <button class="btn filter-best-rate-desc" onclick="descBestRatingMovies()">best rate</button>
           <div class="select-container">
             <select class="btn filter-by-genre" onchange="filterByGenre()">
-              <option value="">Genre</option>
+              <option value="" selected disabled>Genres</option>
               <option value="Crime">Crime</option>
               <option value="Drama">Drama</option>
               <option value="Action">Action</option>

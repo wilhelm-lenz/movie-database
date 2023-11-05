@@ -952,9 +952,9 @@ const submitBtnElement = document.querySelector(".submit-btn");
 const outputMoviesElement = document.querySelector(".section-movies");
 const selectGenreElement = document.querySelector(".filter-by-genre");
 
-const showMovies = () => {
-  movies.forEach((elt) => {
-    outputMoviesElement.innerHTML += `<div class="movie-wrapper">
+const outputMovies = (element) => {
+  let elt = element;
+  outputMoviesElement.innerHTML += `<div class="movie-wrapper">
   <h2 class="movie-headline">${elt[0]}</h2>
   <p class="year">${elt[1]}</p>
   <p class="actor">${elt[2]}</p>
@@ -966,6 +966,11 @@ const showMovies = () => {
     elt[5]
   }</p>
 </div>`;
+};
+
+const showMovies = (callbackOutput) => {
+  movies.forEach((elt) => {
+    callbackOutput(elt);
   });
 };
 
@@ -975,110 +980,50 @@ const serachMovie = () => {
   let searchTerm = searchTermElement.value;
   movies.filter((elt) => {
     if (searchTerm === "") {
-      outputMoviesElement.innerHTML += `<div class="movie-wrapper">
-      <h2 class="movie-headline">${elt[0]}</h2>
-      <p class="year">${elt[1]}</p>
-      <p class="actor">${elt[2]}</p>
-      <p class="duration">${elt[3]}</p>
-      <div class="genre">${elt[4]
-        .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
-        .join("")}</div>
-      <p class="rate">${elt[5]}</p>
-    </div>`;
+      outputMovies(elt);
     } else if (elt[0].includes(searchTerm)) {
-      outputMoviesElement.innerHTML += `<div class="movie-wrapper">
-    <h2 class="movie-headline">${elt[0]}</h2>
-    <p class="year">${elt[1]}</p>
-    <p class="actor">${elt[2]}</p>
-    <p class="duration">${elt[3]}</p>
-    <div class="genre">${elt[4]
-      .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
-      .join("")}</div>
-    <p class="rate">${elt[5]}</p>
-  </div>`;
+      outputMovies(elt);
     }
   });
 };
 
 const ascMoviesByYear = () => {
-  event.preventDefault();
   outputMoviesElement.innerHTML = "";
   movies
     .sort((num1, num2) => num1[1] - num2[1])
     .forEach((elt) => {
-      outputMoviesElement.innerHTML += `<div class="movie-wrapper">
-  <h2 class="movie-headline">${elt[0]}</h2>
-  <p class="year">${elt[1]}</p>
-  <p class="actor">${elt[2]}</p>
-  <p class="duration">${elt[3]}</p>
-  <div class="genre">${elt[4]
-    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
-    .join("")}</div>
-  <p class="rate">${elt[5]}</p>
-</div>`;
+      outputMovies(elt);
     });
 };
 
 const descMoviesByYear = () => {
-  event.preventDefault();
   outputMoviesElement.innerHTML = "";
   movies
     .sort((num1, num2) => num2[1] - num1[1])
     .forEach((elt) => {
-      outputMoviesElement.innerHTML += `<div class="movie-wrapper">
-  <h2 class="movie-headline">${elt[0]}</h2>
-  <p class="year">${elt[1]}</p>
-  <p class="actor">${elt[2]}</p>
-  <p class="duration">${elt[3]}</p>
-  <div class="genre">${elt[4]
-    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
-    .join("")}</div>
-  <p class="rate">${elt[5]}</p>
-</div>`;
+      outputMovies(elt);
     });
 };
 
 const descBestRatingMovies = () => {
-  event.preventDefault();
   outputMoviesElement.innerHTML = "";
   movies
     .sort((num1, num2) => num2[5] - num1[5])
     .forEach((elt) => {
-      outputMoviesElement.innerHTML += `<div class="movie-wrapper">
-  <h2 class="movie-headline">${elt[0]}</h2>
-  <p class="year">${elt[1]}</p>
-  <p class="actor">${elt[2]}</p>
-  <p class="duration">${elt[3]}</p>
-  <div class="genre">${elt[4]
-    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
-    .join("")}</div>
-  <p class="rate">${elt[5]}</p>
-</div>`;
+      outputMovies(elt);
     });
 };
 
 const filterByGenre = () => {
-  event.preventDefault();
   outputMoviesElement.innerHTML = "";
   let selectGenre = selectGenreElement.value;
   movies.filter((elt) => {
     if (elt[4].includes(selectGenre)) {
-      outputMoviesElement.innerHTML += `<div class="movie-wrapper">
-  <h2 class="movie-headline">${elt[0]}</h2>
-  <p class="year">${elt[1]}</p>
-  <p class="actor">${elt[2]}</p>
-  <p class="duration">${elt[3]}</p>
-  <div class="genre">${elt[4]
-    .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
-    .join("")}</div>
-  <p class="rate"><img class="icon-star" src="./assets/img/icons/star50x50.png" alt="icon-star"> ${
-    elt[5]
-  }</p>
-</div>`;
+      outputMovies(elt);
     }
   });
 };
 
-showMovies();
+showMovies(outputMovies);
 
 submitBtnElement.addEventListener("click", serachMovie);
