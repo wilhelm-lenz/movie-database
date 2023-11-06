@@ -1,8 +1,8 @@
 # Movie Database
 
-In diesem Projekt finden sich Filme. Nach den Filmen kann gesucht werden, entweder nach dem Filmtitel oder nach dem Veröffentlichungsjahr. Die jeweiligen Filme werden dann ausgegeben. Außerdem gibt es unterschiedliche Filter nach denen Filme gefiltert werden können. Zusätzlich können neue Filme hinzugefügt werden und nicht mehr vorhandene können aus der Datenbank gelöscht werden.
+In this project, you can find movies. You can search for movies either by title or by release year. The respective movies will then be displayed. Additionally, there are different filters that can be used to filter movies. Moreover, new movies can be added, and ones that are no longer available can be deleted from the database.
 
-## Inhaltsverzeichnis
+## Table of Contents
 
 - [Overview](#overview)
   - [Screenshot](#screenshot)
@@ -14,7 +14,7 @@ In diesem Projekt finden sich Filme. Nach den Filmen kann gesucht werden, entwed
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-## Überblick
+## Overview
 
 ### Screenshot
 
@@ -40,30 +40,30 @@ In diesem Projekt finden sich Filme. Nach den Filmen kann gesucht werden, entwed
 
 ### Links
 
-- Lösung URL: [index.html](https://github.com/wilhelm-lenz/movie-database/blob/main/index.html)
-- Lösung URL: [style.css](https://github.com/wilhelm-lenz/optimalgewicht-rechner/blob/main/assets/css/style.css)
-- Lösung URL: [main.js](https://github.com/wilhelm-lenz/optimalgewicht-rechner/blob/main/assets/js/main.js)
-- Live Seite URL: [Movie Database Live](https://github.com/wilhelm-lenz/movie-database)
+- Solution URL: [index.html](https://github.com/wilhelm-lenz/movie-database/blob/main/index.html)
+- Solution URL: [style.css](https://github.com/wilhelm-lenz/movie-database/blob/main/assets/css/style.css)
+- Solution URL: [main.js](https://github.com/wilhelm-lenz/movie-database/blob/main/assets/js/main.js)
+- Live Page URL: [Movie Database Live](https://wilhelm-lenz.github.io/movie-database/)
 
-## Mein Prozess
+## My Process
 
-### Verwendete Technologien
+### Built With
 
 - Semantic HTML5 markup
 - SCSS custom properties
 - JavaScript
 
-### Erkenntnisse
+### What I Learned
 
-Während der Entwicklung dieser Anwendung habe ich verschiedene Herausforderungen im Zusammenhang mit der HTML-Struktur und der JavaScript-Logik gemeistert. Es ist entscheidend, den Code sauber und modular zu halten, um spätere Anpassungen oder Erweiterungen zu erleichtern.
+During the development of this application, I faced various challenges that I had to overcome. In particular, when selecting genres, I realized that the movies did not update immediately upon clicking, but only after clicking on another genre. This reminded me of the onChange event. With this, the browser can react immediately to changes, and only the movies with the correct genre are displayed.
 
-### Weitere Entwicklung
+### Continued Development
 
-In der nächsten Entwicklungsphase liegt der Fokus auf der Refaktorisierung des Codes zur Verbesserung der Modularität. Zudem wird darauf geachtet, Best Practices zu befolgen und den Code allgemein schlanker zu gestalten. Auch die HTML-Struktur wird für mehr Semantik überarbeitet.
+In the next phase of development, the focus will be on refactoring the code to improve modularity. Also, adherence to best practices will be emphasized to streamline the code in general. The HTML structure will also be revised for more semantics, and later responsiveness will be added to the project.
 
 ### Nützliche Ressourcen
 
-- Netlify - [@app.netlify](https://app.netlify.com/drop/) [@netlify](https://netlify.com): Netlify ist eine Entwicklungsplattform, die es ermöglicht, eine Webanwendung zu skalieren. Zum Beispiel kann eine programmierte Webanwendung leicht in eine mobile Web-App umgewandelt werden.
+- Netlify - [@app.netlify](https://app.netlify.com/drop/) [@netlify](https://netlify.com): Netlify is a development platform that enables scaling a web application. For example, a programmed web application can easily be converted into a mobile web app.
 
 ## Autor
 
