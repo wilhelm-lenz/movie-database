@@ -1117,7 +1117,7 @@ document.addEventListener("keydown", (e) => {
     e.key === "Escape" &&
     !modalForRemoveMovie.classList.contains("hidden")
   ) {
-    closeModal();
+    closeModalRemoveMovie();
   }
 });
 
