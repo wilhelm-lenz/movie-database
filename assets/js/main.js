@@ -961,8 +961,6 @@ const btnCloseModalRemoveMovie = document.querySelector(
   ".close-modal-remove-movie"
 );
 
-console.log(modalForRemoveMovie);
-
 const outputMovies = (element) => {
   let elt = element;
   outputMoviesElement.innerHTML += `<div class="movie-wrapper">
@@ -991,14 +989,15 @@ const serachMovie = () => {
   let searchTerm = searchTermElement.value;
   movies.filter((elt) => {
     if (searchTerm === "") {
+      // give all movies if input is empty
       outputMovies(elt);
     } else if (elt[0].includes(searchTerm)) {
+      // search by title
+      outputMovies(elt);
+    } else if (elt[1].includes(searchTerm)) {
+      // search by year
       outputMovies(elt);
     }
-    //     } else if (elt[0].includes(!searchTerm)) {
-    //       outputMoviesElement.innerHTML = `<div class="movie-wrapper" style=" grid-column: 2 / 3;">
-    //   <h2 class="movie-headline">Film not found</h2>
-    // </div>`;
   });
 };
 
