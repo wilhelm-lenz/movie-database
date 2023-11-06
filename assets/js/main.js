@@ -951,14 +951,25 @@ const searchTermElement = document.querySelector("#search-input");
 const submitBtnElement = document.querySelector(".submit-btn");
 const outputMoviesElement = document.querySelector(".section-movies");
 const selectGenreElement = document.querySelector(".filter-by-genre");
+const btnAddMovie = document.querySelector(".add-movie-btn");
+const btnRemoveMovie = document.querySelector(".remove-movie-btn");
+const modal = document.querySelector(".modal");
+const modalForRemoveMovie = document.querySelector(".modal-for-remove-movie");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnCloseModalRemoveMovie = document.querySelector(
+  ".close-modal-remove-movie"
+);
+
+console.log(modalForRemoveMovie);
 
 const outputMovies = (element) => {
   let elt = element;
   outputMoviesElement.innerHTML += `<div class="movie-wrapper">
   <h2 class="movie-headline">${elt[0]}</h2>
   <p class="year">${elt[1]}</p>
-  <p class="actor">${elt[2]}</p>
-  <p class="duration">${elt[3]}</p>
+  <p class="director">${elt[2]}</p>
+  <p class="movie-length">${elt[3]}</p>
   <div class="genre">${elt[4]
     .map((elt) => `<p style="margin-bottom: 1rem;">${elt}</p>`)
     .join("")}</div>
@@ -984,6 +995,10 @@ const serachMovie = () => {
     } else if (elt[0].includes(searchTerm)) {
       outputMovies(elt);
     }
+    //     } else if (elt[0].includes(!searchTerm)) {
+    //       outputMoviesElement.innerHTML = `<div class="movie-wrapper" style=" grid-column: 2 / 3;">
+    //   <h2 class="movie-headline">Film not found</h2>
+    // </div>`;
   });
 };
 
@@ -1023,6 +1038,88 @@ const filterByGenre = () => {
     }
   });
 };
+
+const addNewMovie = () => {
+  event.preventDefault();
+  const title = document.querySelector("#movie-title").value;
+  const releaseYear = document.querySelector("#release-year").value;
+  const director = document.querySelector("#director").value;
+  const movieLength = document.querySelector("#movie-length").value;
+  const genre = document.querySelector("#genre").value;
+  const rating = document.querySelector("#rating").value;
+  movies.unshift([
+    title,
+    releaseYear,
+    director,
+    movieLength,
+    [genre.split(",")],
+    rating,
+  ]);
+
+  outputMoviesElement.innerHTML = "";
+  movies.forEach((elt) => {
+    outputMovies(elt);
+  });
+  closeModal();
+};
+
+const removeMovie = () => {
+  event.preventDefault();
+  const title = document.querySelector("#remove-movie-title").value;
+  console.log(movies);
+  movies.forEach((elt) =>
+    elt[0] === title ? movies.splice(movies.indexOf(elt), 1) : false
+  );
+
+  outputMoviesElement.innerHTML = "";
+  movies.forEach((elt) => {
+    outputMovies(elt);
+  });
+  closeModalRemoveMovie();
+};
+
+const closeModal = () => {
+  modal.classList.add("hidden");
+
+  modal
+    .querySelectorAll("form input:not(:last-child)")
+    .forEach((elt) => (elt.value = ""));
+  modal.querySelector("form input").value = "";
+  overlay.classList.add("hidden");
+};
+
+const closeModalRemoveMovie = () => {
+  modalForRemoveMovie.classList.add("hidden");
+  modalForRemoveMovie.querySelector("form input:not(:last-child)").value = "";
+
+  overlay.classList.add("hidden");
+};
+
+const showModal = () => {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const showModalForRemoveMovie = () => {
+  modalForRemoveMovie.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+btnAddMovie.addEventListener("click", showModal);
+btnRemoveMovie.addEventListener("click", showModalForRemoveMovie);
+btnCloseModal.addEventListener("click", closeModal);
+btnCloseModalRemoveMovie.addEventListener("click", closeModalRemoveMovie);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  } else if (
+    e.key === "Escape" &&
+    !modalForRemoveMovie.classList.contains("hidden")
+  ) {
+    closeModal();
+  }
+});
 
 showMovies(outputMovies);
 

@@ -54,14 +54,34 @@
               <img class="arrow-down" src="./assets/img/icons/arrow-up-30.png" alt="icon arrow down">
             </div>
           </div>
-          <button class="btn add-movie-btn">+ new Movie</button>
+          <button class="btn add-movie-btn"><span>+</span> add Movie</button>
+          <button class="btn remove-movie-btn"><span>-</span> remove Movie</button>
         </article>
       </section>
       <section class="section-movies"></section>
-
     </main>
   </div>
+  <div class="modal hidden">
+    <button class="close-modal">&times;</button>
+    <form>
+      <input type="text" name="movie-title" id="movie-title" placeholder="Movie Title..." required>
+      <input type="number" name="release-year" id="release-year" placeholder="Release Year..." required>
+      <input type="text" name="director" id="director" placeholder="Director..." required>
+      <input type="text" name="movie-length" id="movie-length" placeholder="Movie length..." required>
+      <input type="text" name="genre" id="genre" placeholder="Genre..." required>
+      <input type="number" name="rating" id="rating" placeholder="Rating..." min="0" max="10" required>
+      <input type="submit" value="Add to Database" onclick="addNewMovie()">
+    </form>
+  </div>
+  <div class="modal-for-remove-movie hidden">
+    <button class="close-modal-remove-movie">&times;</button>
+    <form>
+      <input type="text" name="remove-movie-title" id="remove-movie-title" placeholder="Movie Title..." required>
 
+      <input type="submit" value="Remove from Database" onclick="removeMovie()">
+    </form>
+  </div>
+  <div class="overlay hidden"></div>
   <script src="./assets/js/main.js"></script>
 </body>
 

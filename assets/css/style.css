@@ -82,6 +82,71 @@ body {
   text-align: center;
   background-color: #212529;
   font-family: "Rubik-Regular";
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 4rem;
+  color: #e03131;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: 0.3s linear;
+}
+
+.close-modal:hover {
+  color: rgba(250, 82, 82, 0.8);
+}
+
+.close-modal-remove-movie {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 4rem;
+  color: #e03131;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: 0.3s linear;
+}
+
+.close-modal-remove-movie:hover {
+  color: rgba(250, 82, 82, 0.8);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }
 
 /* ------------------------ */
@@ -108,6 +173,7 @@ body {
 
 main {
   position: relative;
+  z-index: 0;
 }
 
 .to-top {
@@ -116,11 +182,12 @@ main {
   bottom: 2.4rem;
   background-color: rgb(255, 255, 255);
   border-radius: 0.8rem;
+  padding-inline: 0.4rem;
 }
 
 .to-top img {
-  height: 3.6rem;
-  width: 3.6rem;
+  height: 3.4rem;
+  width: 3rem;
 }
 
 .to-top:hover {
@@ -133,14 +200,17 @@ main {
 
 .searchField {
   width: 35%;
-  padding-block: 2rem;
+  padding-block: 1.6rem;
   padding-right: 1rem;
   border-radius: 5rem;
   border: 2px solid #fa5252;
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-align: center;
   margin-right: 1rem;
   color: #e03131;
+}
+.searchField:focus {
+  outline: none;
 }
 
 .submit-btn {
@@ -180,14 +250,14 @@ main {
 .filter-wrapper {
   max-width: 100%;
   padding-inline: 5%;
-  margin: 0 0 8rem;
+  margin: 0 0 10rem;
   display: flex;
   justify-content: center;
   column-gap: 2rem;
 }
 
 .btn {
-  padding-block: 1.6rem;
+  padding-block: 1rem;
   padding-inline: 2rem;
   border-radius: 5rem;
   border: 2px solid #fa5252;
@@ -217,16 +287,18 @@ main {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .filter-by-genre {
   transform: none;
   appearance: none;
   position: relative;
-  max-width: 100%;
-  padding-inline: 2rem;
-  width: 18rem;
+  padding-inline: 0 2rem;
+  width: 15rem;
+  padding-block: 2rem;
+}
+.filter-by-genre:focus {
+  outline: none;
 }
 
 .filter-by-genre:hover,
@@ -239,7 +311,7 @@ main {
   width: 50%;
   height: 100%;
   position: absolute;
-  right: -20px;
+  right: -15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -255,6 +327,19 @@ main {
   margin-left: auto;
   background-color: rgba(255, 255, 255, 0.4);
   border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  padding-block: 1rem;
+}
+
+.add-movie-btn:hover,
+.add-movie-btn:active {
+  transform: none;
+}
+
+.add-movie-btn span {
+  font-size: 2rem;
 }
 
 .add-movie-btn:hover {
@@ -263,6 +348,39 @@ main {
 
 .add-movie-btn:active {
   background-color: rgba(255, 255, 255, 0.4);
+}
+.add-movie-btn:focus {
+  outline: none;
+}
+
+.remove-movie-btn {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  padding-block: 1rem;
+}
+
+.remove-movie-btn:hover,
+.remove-movie-btn:active {
+  transform: none;
+}
+
+.remove-movie-btn span {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.remove-movie-btn:hover {
+  border: 2px solid #fa5252;
+}
+
+.remove-movie-btn:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.remove-movie-btn:focus {
+  outline: none;
 }
 
 .section-movies {
@@ -284,8 +402,9 @@ main {
 
 .movie-wrapper:hover {
   transform: scale(1.05);
-  background-color: rgba(224, 49, 49, 0.5);
+  background-color: Rubik-Regular(224, 49, 49, 0.5);
   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+  background-color: rgba(224, 49, 49, 0.4);
   cursor: pointer;
 }
 
@@ -299,12 +418,12 @@ main {
   margin-bottom: 2rem;
 }
 
-.actor {
+.director {
   margin-bottom: 2rem;
   font-family: "Rubik-Bold";
 }
 
-.duration {
+.movie-length {
   margin-bottom: 2rem;
 }
 
@@ -321,6 +440,136 @@ main {
   width: 1.8rem;
   height: 1.8rem;
   display: inline;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background-color: #212529;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  border-radius: 1.6rem;
+}
+
+.modal form {
+  display: block;
+  max-width: 100%;
+}
+.modal form ::placeholder {
+  color: white;
+}
+
+.modal form input {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 2rem;
+  padding-block: 1.6rem;
+  border-radius: 5rem;
+  padding-left: 3rem;
+  color: #fa5252;
+  background-color: transparent;
+  border: 2px solid #fa5252;
+}
+.modal form input::-webkit-outer-spin-button, .modal form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.modal form input::placeholder {
+  color: rgba(221, 221, 221, 0.4);
+}
+.modal form input:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.modal form input:focus {
+  outline: none;
+}
+.modal form input:last-child {
+  background-color: #fa5252;
+  color: white;
+  margin-top: 4rem;
+}
+.modal form input:last-child:hover {
+  cursor: pointer;
+  background-color: rgba(250, 82, 82, 0.4);
+  transform: translateY(-0.2rem);
+  box-shadow: 4px 4px 5px #fa5252;
+}
+.modal form input:last-child:active {
+  transform: translateY(0.1rem);
+  box-shadow: 2px 2px 2px #fa5252;
+  background-color: rgba(250, 82, 82, 0.7);
+}
+
+.modal-for-remove-movie {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background-color: #212529;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  border-radius: 1.6rem;
+}
+
+.modal-for-remove-movie form {
+  display: block;
+  max-width: 100%;
+}
+.modal-for-remove-movie form ::placeholder {
+  color: white;
+}
+
+.modal-for-remove-movie form input {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 2rem;
+  padding-block: 1.6rem;
+  border-radius: 5rem;
+  padding-left: 3rem;
+  color: #fa5252;
+  background-color: transparent;
+  border: 2px solid #fa5252;
+}
+.modal-for-remove-movie form input::-webkit-outer-spin-button, .modal-for-remove-movie form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.modal-for-remove-movie form input::placeholder {
+  color: rgba(221, 221, 221, 0.4);
+}
+.modal-for-remove-movie form input:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.modal-for-remove-movie form input:focus {
+  outline: none;
+}
+.modal-for-remove-movie form input:last-child {
+  background-color: #fa5252;
+  color: white;
+  margin-top: 4rem;
+}
+.modal-for-remove-movie form input:last-child:hover {
+  cursor: pointer;
+  background-color: rgba(250, 82, 82, 0.4);
+  transform: translateY(-0.2rem);
+  box-shadow: 4px 4px 5px #fa5252;
+}
+.modal-for-remove-movie form input:last-child:active {
+  transform: translateY(0.1rem);
+  box-shadow: 2px 2px 2px #fa5252;
+  background-color: rgba(250, 82, 82, 0.7);
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes movinBottom {
