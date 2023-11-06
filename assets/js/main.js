@@ -991,7 +991,7 @@ const serachMovie = () => {
     if (searchTerm === "") {
       // give all movies if input is empty
       outputMovies(elt);
-    } else if (elt[0].includes(searchTerm)) {
+    } else if (elt[0].toLowerCase().includes(searchTerm.toLowerCase())) {
       // search by title
       outputMovies(elt);
     } else if (elt[1].includes(searchTerm)) {
