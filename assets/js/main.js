@@ -1080,18 +1080,15 @@ const removeMovie = () => {
 
 const closeModal = () => {
   modal.classList.add("hidden");
-
   modal
     .querySelectorAll("form input:not(:last-child)")
     .forEach((elt) => (elt.value = ""));
-  modal.querySelector("form input").value = "";
   overlay.classList.add("hidden");
 };
 
 const closeModalRemoveMovie = () => {
   modalForRemoveMovie.classList.add("hidden");
   modalForRemoveMovie.querySelector("form input:not(:last-child)").value = "";
-
   overlay.classList.add("hidden");
 };
 
