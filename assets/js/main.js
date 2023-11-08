@@ -987,26 +987,33 @@ const searchMovie = () => {
   event.preventDefault();
   outputMoviesElement.innerHTML = "";
   let searchTerm = searchTermElement.value;
+  let foundMovies = false;
 
   movies.forEach((elt) => {
     if (searchTerm === "") {
-      // give all movies if input is empty
       outputMovies(elt);
-    } else if (elt[0].toLowerCase().includes(searchTerm.toLowerCase())) {
-      // search by title
+      foundMovies = true;
+    } else if (
+      elt[0].toLowerCase().includes(searchTerm.toLowerCase()) ||
+      elt[1].includes(searchTerm) ||
+      elt[2].includes(searchTerm)
+    ) {
       outputMovies(elt);
-    } else if (elt[1].includes(searchTerm)) {
-      // search by year
-      outputMovies(elt);
-    } else if (elt[2].includes(searchTerm)) {
-      // search by director
-      outputMovies(elt);
+      foundMovies = true;
     }
   });
+
+  if (!foundMovies) {
+    movieNotFound(searchTerm);
+  }
 };
 
-const movieNotFound = () => {
-  outputMoviesElement.innerHTML = "Film not found";
+const movieNotFound = (searching) => {
+  outputMoviesElement.innerHTML = `<div class="movie-wrapper"  style="grid-column: 2 / 3";>
+  <h2 class="movie-headline">Film  "${searching}" not Found</h2>
+  <p>Do you want to add the movie you are looking for to the database?</p>
+  <button class="btn add-movie-btn-in-section-movie" onclick="showModal()"><span>+</span> add Movie</button>
+</div>`;
 };
 
 const ascMoviesByYear = () => {

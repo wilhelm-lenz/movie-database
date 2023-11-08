@@ -1,0 +1,52 @@
+@use "../abstracts/variables";
+
+.add-movie-btn-in-section-movie {
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+  border-radius: 5rem;
+  border: variables.$btn-border;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.2s ease-out;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+
+  &:hover {
+    border: 2px solid #fa5252;
+    background-color: variables.$btn-bg-color-hover;
+    transform: translateY(-0.2rem);
+    box-shadow: 4px 4px 5px #fa5252;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(0.1rem);
+    box-shadow: 2px 2px 2px #fa5252;
+    background-color: variables.$btn-bg-color-active;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:active {
+    transform: none;
+  }
+
+  & span {
+    font-size: 2rem;
+  }
+
+  &:hover {
+  }
+
+  &:active {
+  }
+}
