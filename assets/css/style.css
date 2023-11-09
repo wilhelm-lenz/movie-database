@@ -339,14 +339,14 @@ main .section-search .submit-btn {
   padding-block: 2rem;
   padding-inline: 6rem;
   border-radius: 5rem;
-  background-color: #fa5252;
+  background-color: rgb(224, 49, 49);
   color: white;
   font-size: 1.6rem;
   text-transform: uppercase;
   border: 2px solid #fa5252;
 }
 main .section-search .submit-btn:hover {
-  background-color: rgba(250, 82, 82, 0.8);
+  background-color: rgba(250, 82, 82, 0.4);
   transition: 0.2s linear;
   transform: translateY(-0.2rem);
   box-shadow: 4px 4px 5px rgba(255, 255, 255, 0.8);
@@ -355,7 +355,7 @@ main .section-search .submit-btn:hover {
 main .section-search .submit-btn:active {
   transform: translateY(0.1rem);
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.8);
-  background-color: rgba(250, 82, 82, 0.2);
+  background-color: rgba(250, 82, 82, 0.7);
 }
 main .section-search .filter-headline {
   color: white;
@@ -497,8 +497,8 @@ main .section-movies .movie-wrapper {
 main .section-movies .movie-wrapper:hover {
   transform: scale(1.05);
   background-color: Rubik-Regular(224, 49, 49, 0.5);
-  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
-  background-color: rgba(224, 49, 49, 0.4);
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.4);
+  background-color: rgba(250, 82, 82, 0.4);
   cursor: pointer;
 }
 main .section-movies .movie-headline {
